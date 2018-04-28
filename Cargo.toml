@@ -1,0 +1,8 @@
+[package]
+name = "tarnished-doom"
+version = "0.1.0"
+authors = ["Stephan van Ellewee <stephan.vanellewee@takealot.com>"]
+build = "build.rs"
+
+
+[dependencies]
