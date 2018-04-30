@@ -5,4 +5,5 @@ authors = ["Stephan van Ellewee <stephan.vanellewee@takealot.com>"]
 build = "build.rs"
 
 
-[dependencies]
+[build-dependencies]
+cc = { version = "1.0.14", features = ["parallel"] }

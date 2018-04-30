@@ -11,20 +11,18 @@ extern {
 
 fn main() {
    // create a vector of zero terminated strings
-   let args = std::env::args().map(|arg| CString::new(arg).unwrap() ).collect::<Vec<CString>>();
+   let args = std::env::args()
+       .map(|arg| CString::new(arg).unwrap() )
+       .collect::<Vec<CString>>();
    // convert the strings to raw pointers
-   let c_args = args.iter().map(|arg| arg.as_ptr()).collect::<Vec<*const c_char>>();
-   println!("{:?}..", c_args); 
+   let c_args = args
+       .iter()
+       .map(|arg| arg.as_ptr())
+       .collect::<Vec<*const c_char>>();
    unsafe {
-       println!("test1");
        myargc = c_args.len() as u32;
-       println!("test2");
        myargv = c_args.as_ptr();
-       println!("test3");
        M_FindResponseFile();
-       println!("test4");
        D_DoomMain();
-       println!("test5");
    }
-   println!("BUUUUYAAA");
 }

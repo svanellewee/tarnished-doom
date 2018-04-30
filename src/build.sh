@@ -4,7 +4,7 @@ TARGET=lib${DIR}.a
 rm -fr ${TARGET} *.o
 for i in *.c; 
 do 
-	gcc -c -fPIC -O2 -g \
+	cc -c -fPIC -O2 -g \
 		-Wall \
 		-Wdeclaration-after-statement \
 		-Wredundant-decls \
